@@ -36,7 +36,7 @@ class SearchController < ApplicationController
   def index
     format = params[:format]
     company_name = params[:q]    
-    return if company_name.nil?
+    return if company_name.nil? or company_name.empty?
 
     lookup_company(company_name)
     
