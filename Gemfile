@@ -1,8 +1,16 @@
 source 'https://rubygems.org'
 
 gem 'nokogiri'
-gem 'rspec-rails', :group => [:development, :test]
 gem 'capybara'
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'faker'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
