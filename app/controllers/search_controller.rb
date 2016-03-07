@@ -10,11 +10,6 @@ class SearchController < ApplicationController
 
   def lookup_cached(company_name)
     @company = Company.find_by name: company_name
-    if @company
-      return @company.number
-    else
-      return nil
-    end
   end
 
   def lookup_new(company_name)
@@ -27,26 +22,21 @@ class SearchController < ApplicationController
         company_number = $1
         company_name = $2.gsub("_", " ")
         db_save(company_name, company_number)
-        return company_number
       end
     end
-
-    return nil
   end
 
-  def lookup_company_number(company_name)
-    number = lookup_cached(company_name)
-    if number.nil?
-      number = lookup_new(company_name)
+  def lookup_company(company_name)
+    lookup_cached(company_name)
+    if @company.nil?
+      lookup_new(company_name)
     end
-
-    return number
   end
 
   def find
     format = params[:format]
     company_name = params[:q]
-    company_number = lookup_company_number(company_name)
+    lookup_company(company_name)
     
     case format
     when "json"
@@ -54,7 +44,7 @@ class SearchController < ApplicationController
     when "xml"
       render xml: @company
     else
-      render company_number.to_s
+      render @company.to_s
     end
   end
 end
