@@ -1,2 +1,4 @@
+--default-path spec/
+--pattern "test_*.rb"
 --color
 --require spec_helper
