@@ -13,6 +13,7 @@ json = JSON.parse(open(url).read, {:quirks_mode => true})
 
 if json.nil?
   puts "Company not found"
+  exit 1
 else
   puts json["number"]
 end
