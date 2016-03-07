@@ -5,4 +5,4 @@ Bolagssok - Rails-app och ruby-klient
     > ruby ./client.rb IKEA AB
     5568099963
 
-
+Testning sker med RSpec och testerna befinner sig i spec/
