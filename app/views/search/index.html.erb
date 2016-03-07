@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Company Search</h1>
+
+  <%= form_tag("/search", method: "get") do %>
+    <%= label_tag(:q, "Company name:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+
