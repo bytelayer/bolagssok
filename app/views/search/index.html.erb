@@ -1,6 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<% if !@company.nil? %>
+<% if @company.nil? %>
+  <% if params[:q] %>
+    Company not found
+  <% end %>
+<% else %>
   <%= @company.number %>
 <% end %>
 
