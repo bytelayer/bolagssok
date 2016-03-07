@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'nokogiri'
 gem 'rspec-rails', :group => [:development, :test]
+gem 'capybara'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
