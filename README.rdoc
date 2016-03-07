@@ -2,8 +2,8 @@
 
 Bolagssok - Rails-app och ruby-klient
 
-ruby ./client.rb IKEA AB
-=> 5568099963
+    > ruby ./client.rb IKEA AB
+    5568099963
 
 
 <tt>rake doc:app</tt>.
