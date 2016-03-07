@@ -6,4 +6,3 @@ Bolagssok - Rails-app och ruby-klient
     5568099963
 
 
-<tt>rake doc:app</tt>.
