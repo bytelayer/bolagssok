@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<% if !@company.nil? %>
+  <%= @company.number %>
+<% end %>
+
 <h1>Company Search</h1>
 
   <%= form_tag("/search", method: "get") do %>

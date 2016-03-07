@@ -33,9 +33,11 @@ class SearchController < ApplicationController
     end
   end
 
-  def find
+  def index
     format = params[:format]
-    company_name = params[:q]
+    company_name = params[:q]    
+    return if company_name.nil?
+
     lookup_company(company_name)
     
     case format
@@ -43,8 +45,6 @@ class SearchController < ApplicationController
       render json: @company
     when "xml"
       render xml: @company
-    else
-      render @company.to_s
     end
   end
 end
